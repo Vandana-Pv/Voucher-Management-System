@@ -6,10 +6,10 @@ const voucherRedeem = require('./routes/redeems');
 const retrieveVoucher = require('./routes/retrieve')
 const app = express();
 
-// if(!config.get('jwtPrivateKey')) {
-//     console.error('FATAL ERROR : JWT key is not defined')
-//     process.exit(1)
-// }
+if(!config.get('jwtPrivateKey')) {
+    console.error('FATAL ERROR : JWT key is not defined')
+    process.exit(1)
+}
 
 app.use(express.json())
 app.use(express.urlencoded({extended : true}));
